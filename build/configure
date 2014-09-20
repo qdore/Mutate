@@ -1,0 +1,6 @@
+#!/bin/bash
+PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
+export PATH
+/usr/lib/x86_64-linux-gnu/qt5/bin/qmake ../Mutate/Mutate.pro
+echo -e "run configure Ok!"
+

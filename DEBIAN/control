@@ -1,0 +1,12 @@
+Package: Mutate
+Version: 1.0
+Architecture: amd64
+Maintainer: QW <wei.qianghb@foxmail.com>
+Installed-Size: 896
+Pre-Depends: dpkg (>= 1.14.0)
+Depends: fcitx-libs-qt5, fcitx-libs-qt, qt5-qmake, qtbase5-dev, libqt5x11extras5-dev
+Provides: QW
+Section: utils
+Priority: optional
+Description: Mutate - An award-winning productivity application
+ Mutate is a simple quick start tool inspired by Alfred(OS X app).Be more productive with hotkeys, keywords and file actions at your fingertips.
