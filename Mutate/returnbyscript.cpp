@@ -7,3 +7,7 @@ returnByScript::returnByScript(std::string icon, std::string text, std::string c
     subtext(subtext),
     command(command)
 {}
+bool returnByScript::operator==(const returnByScript& b)
+{
+    return this->text == b.text;
+}

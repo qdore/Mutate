@@ -1,4 +1,5 @@
 #include <fstream>
+#include <iostream>
 #include <sstream>
 #include <QDir>
 #include <QDirIterator>
@@ -90,7 +91,7 @@ void ConfigParse::parse (const char *file)
     while (getline (f, line))
     {
         ++line_number;
-        if (!line.size() || line[0] == ';' || line[0] == '#')
+        if (!line.size() || line[0] == ';' || line[0] == '#' || line[0] == ' ')
         {
             continue;
         }

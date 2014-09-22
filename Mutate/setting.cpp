@@ -106,7 +106,7 @@ void Setting::saveItems()
         x->exec();
         return;
     }
-    std::ofstream out((std::string(PATH) + "/config.ini").c_str());
+    std::ofstream out((CONFPATH).c_str());
     for (int i = 0; i != ui->tableWidget->rowCount(); i++)
     {
         out << '[' << ui->tableWidget->item(i, 3)->text().toStdString() << ']' << std::endl;

@@ -120,5 +120,5 @@ void PlainText::keyPressEvent(QKeyEvent* event)
 }
 void PlainText::focusOutEvent(QFocusEvent *event)
 {
-    this->parent->hide();
+    //this->parent->hide();
 }

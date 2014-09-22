@@ -12,6 +12,7 @@ public:
     std::string command;
 public:
     returnByScript(std::string icon, std::string text,  std::string command, std::string subtext = "");
+    bool operator ==(const returnByScript& b);
 };
 
 #endif // RETURNBYSCRIPT_H

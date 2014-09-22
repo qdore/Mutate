@@ -225,22 +225,8 @@ void Widget::paint()
 
 void Widget::searchApp()
 {
-    std::string apppaths[2] = {"/usr/share/applications"};
-    QStringList environment = QProcess::systemEnvironment();
-    QString str;
-    std::string tmp;
-    foreach(str, environment)
-    {
-        if (str.startsWith("HOME="))
-        {
-            tmp = str.toStdString().substr(5, str.size());
-            std::istringstream in(tmp);
-            in >> apppaths[1];
-            tmp = apppaths[1];
-            apppaths[1] += "/.local/share/applications";
-            break;
-        }
-    }
+    std::string apppaths[2] = {APPSEARCHPATH};//APPSEARCHPATH2};
+    apppaths[1] = getHomPath() + "/.local/share/applications";
     for (int i = 0; i != 2; i++)
     {
         QStringList filters;
@@ -281,7 +267,7 @@ void Widget::searchApp()
                 else {
                     QStringList iconfilters;
                     iconfilters<<QString("*.png")<<QString("*.svg");
-                    QDirIterator icon_iterator(QString::fromStdString(tmp + "/.local/share/icons"),
+                    QDirIterator icon_iterator(QString::fromStdString(getHomPath() + "/.local/share/icons"),
                         iconfilters,
                         QDir::Files | QDir::NoSymLinks,
                         QDirIterator::Subdirectories);

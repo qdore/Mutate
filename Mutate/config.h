@@ -24,6 +24,8 @@
 #define FREQUENCEPATH (CFPATH+"/frequence")
 #define CONFPATH (CFPATH+"/config.ini")
 #define URLPATH (CFPATH+"/url.history")
+#define APPSEARCHPATH ("/usr/share/applications")
+//#define APPSEARCHPATH2 ("/usr/share/app-install/desktop")
 
 #define MAXADDTOLISTSIZE 9
 #define MAXSORTSIZE 50

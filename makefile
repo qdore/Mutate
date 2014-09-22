@@ -1,6 +1,5 @@
 default:
 	mkdir -p build
-	sudo apt-get install fcitx-libs-qt
 	sudo apt-get install fcitx-libs-qt5
 	sudo apt-get install qt5-qmake
 	sudo apt-get install qtbase5-dev
