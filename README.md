@@ -83,7 +83,7 @@ command=copy
 icon=
 subtext=work, act, handle affairs, have a job
 ```
-It isn't to know what does it mean, and it is also very easy to write a script.
+It isn't hard to know what does it mean, and it is also very easy to write a script.
 In the "~/.config/Mutate/scripts",it has some scripts for examples.
 ###Contact: wei.qianghb@foxmail.com
 
