@@ -5,6 +5,7 @@ export PATH
 make && make install
 for i in `ls /home`; do
 mkdir -p /home/$i/.config/Mutate
+chmod -R a+w /home/$i/.config/Mutate
 cp -r /config/* /home/$i/.config/Mutate
 cat /config/config.ini | sed "s#{home}#`echo /home/$i`#g" > /home/$i/.config/Mutate/config.ini
 done
