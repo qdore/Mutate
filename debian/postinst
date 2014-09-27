@@ -1,0 +1,32 @@
+#!/bin/sh
+# postinst script for mutate
+#
+# see: dh_installdeb(1)
+
+# summary of how this script can be called:
+#        * <postinst> `configure' <most-recently-configured-version>
+#        * <old-postinst> `abort-upgrade' <new version>
+#        * <conflictor's-postinst> `abort-remove' `in-favour' <package>
+#          <new-version>
+#        * <postinst> `abort-remove'
+#        * <deconfigured's-postinst> `abort-deconfigure' `in-favour'
+#          <failed-install-package> <version> `removing'
+#          <conflicting-package> <version>
+# for details, see http://www.debian.org/doc/debian-policy/ or
+# the debian-policy package
+PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
+export PATH
+
+dire="/usr/share/doc/mutate"
+
+cd $dire/build && gunzip mutate.gz && chmod a+x ./mutate && cp ./mutate /usr/local/bin
+for i in `ls /home`; do
+mkdir -p /home/$i/.config/Mutate
+cp -r $dire/config/* /home/$i/.config/Mutate
+cat $dire/config/config.ini | sed "s#{home}#`echo /home/$i`#g" > /home/$i/.config/Mutate/config.ini
+chmod -R a+x /home/$i/.config/Mutate/scripts
+chmod -R a+w /home/$i/.config/Mutate
+done
+cp $dire/info/mutate.png /usr/share/icons
+cp $dire/info/Mutate.desktop /usr/share/applications
+rm -rf $dire

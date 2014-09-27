@@ -2,9 +2,10 @@ Package: mutate
 Version: 1.0-1
 Architecture: amd64
 Maintainer: Wei Qiang <wei.qianghb@foxmail.com>
-Installed-Size: 29
-Section: unknown
+Installed-Size: 1020
+Depends: fcitx-libs-qt5, fcitx-libs-qt, qt5-qmake, qtbase5-dev, libqt5x11extras5-dev, libboost-regex1.55.0
+Section: utils
 Priority: optional
-Homepage: <insert the upstream URL, if relevant>
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Homepage: https://github.com/qdore/Mutate
+Description: Mutate - An award-winning productivity application
+ Mutate is a simple quick start tool inspired by Alfred(OS X app).Be more productive with hotkeys, keywords and file actions at your fingertips.

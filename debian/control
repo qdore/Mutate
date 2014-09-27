@@ -1,15 +1,15 @@
 Source: mutate
-Section: unknown
+Section: utils
 Priority: optional
 Maintainer: Wei Qiang <wei.qianghb@foxmail.com>
 Build-Depends: debhelper (>= 8.0.0)
 Standards-Version: 3.9.4
-Homepage: <insert the upstream URL, if relevant>
+Homepage: https://github.com/qdore/Mutate
 #Vcs-Git: git://git.debian.org/collab-maint/mutate.git
 #Vcs-Browser: http://git.debian.org/?p=collab-maint/mutate.git;a=summary
 
 Package: mutate
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Depends: fcitx-libs-qt5, fcitx-libs-qt, qt5-qmake, qtbase5-dev, libqt5x11extras5-dev, libboost-regex1.55.0
+Description: Mutate - An award-winning productivity application 
+ Mutate is a simple quick start tool inspired by Alfred(OS X app).Be more productive with hotkeys, keywords and file actions at your fingertips.
