@@ -1,6 +1,0 @@
-rm -rf /usr/local/bin/mutate
-rm /usr/share/icons/mutate.png
-rm /usr/share/applications/Mutate.desktop
-for i in `ls /home`; do
-rm -rf /home/$i/.config/Mutate
-done

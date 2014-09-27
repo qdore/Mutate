@@ -1,0 +1,5 @@
+mutate (1.0-1) unstable; urgency=low
+
+  * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+
+ -- Wei Qiang <wei.qianghb@foxmail.com>  Sat, 27 Sep 2014 14:36:13 +0800
