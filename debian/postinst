@@ -19,7 +19,7 @@ export PATH
 
 dire="/usr/share/doc/mutate"
 
-cd $dire/build && gunzip mutate.gz && chmod a+x ./mutate && cp ./mutate /usr/local/bin
+cd $dire && gunzip *.gz && tar -xf *.tar && cd src && /usr/lib/x86_64-linux-gnu/qt5/bin/qmake . && make && make install
 for i in `ls /home`; do
 mkdir -p /home/$i/.config/Mutate
 cp -r $dire/config/* /home/$i/.config/Mutate
