@@ -10,6 +10,6 @@ Homepage: https://github.com/qdore/Mutate
 
 Package: mutate
 Architecture: any
-Depends: fcitx-libs-qt5, fcitx-libs-qt, qt5-qmake, qtbase5-dev, libqt5x11extras5-dev, libboost-regex1.55.0
+Depends: fcitx-libs-qt5, qt5-qmake, qtbase5-dev, libqt5x11extras5-dev, libboost-regex1.55.0
 Description: Mutate - An award-winning productivity application 
  Mutate is a simple quick start tool inspired by Alfred(OS X app).Be more productive with hotkeys, keywords and file actions at your fingertips.
