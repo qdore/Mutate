@@ -3,8 +3,16 @@ Mutate - An award-winning productivity application
 
 Mutate is a simple quick start tool inspired by Alfred(OS X app) for ubuntu.Be more productive with hotkeys, keywords and file actions at your fingertips.
  
-    NOTE: For now I have just tested on Ubuntu 14.04 amd64, others will be test later.
+##How to install:
 
+    Ubuntu 14.04:
+    sudo add-apt-repository ppa:wei-qianghb/mutate
+    sudo apt-get update
+    sudo apt-get install mutate
+
+    Others:
+    xdg-open <mutate_1.0>/release/mutate_1.0.deb
+	
 ##Loaded with features to increase your productivity
 ----
 ###Find Applications & Files
@@ -29,11 +37,6 @@ You can add other keywods such as keywords like wiki, twitter or youtube.
 ####quickly shut down or log out or reboot
 ![shutdown demo](http://i.imgur.com/yvyyUDb.png)
 
-##How to install:
-
-	make && make install(without sudo!)
-	
-	Then you can open it use Dash.
 
 ![url demo](http://i.imgur.com/bnBvfgw.png)
 
