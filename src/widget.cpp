@@ -46,6 +46,8 @@ Widget::Widget(QWidget *parent) :
     font2.setPointSize(40);
     plainTextEdit->setFont(font2);
     plainTextEdit->setFocusPolicy(Qt::StrongFocus);
+    plainTextEdit->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    plainTextEdit->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     ui->formLayout->setWidget(0, QFormLayout::SpanningRole, plainTextEdit);
     listWidget = new ListWidget(ui->groupBox);
     plainTextEdit->listWidget = listWidget;
