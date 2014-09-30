@@ -58,15 +58,15 @@ FORMS    += widget.ui \
     listitem.ui \
     doublelistitem.ui
 
-INCLUDEPATH += ../include /usr/include/python2.7\
--pthread /usr/include/glib-2.0 /usr/lib/x86_64-linux-gnu/glib-2.0/include\
-/usr/include/gtk-2.0 /usr/lib/x86_64-linux-gnu/gtk-2.0/include /usr/include/atk-1.0 /usr/include/cairo /usr/include/gdk-pixbuf-2.0 /usr/include/pango-1.0 /usr/include/gio-unix-2.0/ /usr/include/freetype2 /usr/include/glib-2.0 /usr/lib/x86_64-linux-gnu/glib-2.0/include /usr/include/pixman-1 /usr/include/libpng12 /usr/include/harfbuzz
+INCLUDEPATH += ../include\
 
-LIBS += -lX11 -L../libs -lboost_regex -lboost_python -lpython2.7\
--lgio-2.0 -lgobject-2.0 -lglib-2.0\
--lgtk-x11-2.0 -lgdk-x11-2.0 -latk-1.0 -lgio-2.0 -lpangoft2-1.0 -lpangocairo-1.0 -lgdk_pixbuf-2.0 -lcairo -lpango-1.0 -lfontconfig -lgobject-2.0 -lglib-2.0 -lfreetype
+LIBS += -lX11 -L../libs -lboost_regex\
 
-CONFIG += c++11
+CONFIG += c++11\
+          link_pkgconfig
+
+PKGCONFIG += gtk+-2.0\
+             gio-2.0
 
 RESOURCES += \
     icons.qrc
