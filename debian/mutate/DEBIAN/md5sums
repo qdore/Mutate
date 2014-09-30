@@ -1,6 +1,6 @@
 b7a304120a07d96bd5511dec32f08fae  usr/share/doc/mutate/README.Debian
 5de27778343b10600d6f5c8e4a550a4a  usr/share/doc/mutate/README.md
-417c3091fe3f22dc46f124c310962d54  usr/share/doc/mutate/changelog.Debian.gz
+c3f0089759f38fb2dd0cc7e9b860a92e  usr/share/doc/mutate/changelog.gz
 8e8d163e9001bc4741c78d24c75e1097  usr/share/doc/mutate/config/config.ini
 017616c06cd9a759512646e59ca92d84  usr/share/doc/mutate/config/scripts/baidu_search/baidu-icon.png
 d80f73992b650bb725bbf9dc7edca6f7  usr/share/doc/mutate/config/scripts/baidu_search/baidu_search.sh
@@ -135,4 +135,4 @@ d7ddb0b94f470a62b5e3be135357c96f  usr/share/doc/mutate/include/boost/regex/v4/w3
 c2c2be5ddc796610e9cb84a4dba6ecb0  usr/share/doc/mutate/include/boost/regex_fwd.hpp
 03ce518d73000bd426d510ef492afeb0  usr/share/doc/mutate/info/Mutate.desktop
 2ae1f7404619f6a34d3b37719a715801  usr/share/doc/mutate/info/mutate.png
-bb55294c0a766302130b18e8a6e91429  usr/share/doc/mutate/src.tar.gz
+4abd1cc47eca9c8dde48e72401df0054  usr/share/doc/mutate/src.tar.gz

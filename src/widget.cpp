@@ -48,6 +48,8 @@ Widget::Widget(QWidget *parent) :
     plainTextEdit->setFocusPolicy(Qt::StrongFocus);
     plainTextEdit->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     plainTextEdit->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    plainTextEdit->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    plainTextEdit->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     ui->formLayout->setWidget(0, QFormLayout::SpanningRole, plainTextEdit);
     listWidget = new ListWidget(ui->groupBox);
     plainTextEdit->listWidget = listWidget;

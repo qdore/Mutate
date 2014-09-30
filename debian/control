@@ -3,7 +3,7 @@ Section: utils
 Priority: optional
 Maintainer: Wei Qiang <wei.qianghb@foxmail.com>
 Build-Depends: debhelper (>= 8.0.0)
-Standards-Version: 3.9.4
+Standards-Version: 1.1
 Homepage: https://github.com/qdore/Mutate
 #Vcs-Git: git://git.debian.org/collab-maint/mutate.git
 #Vcs-Browser: http://git.debian.org/?p=collab-maint/mutate.git;a=summary

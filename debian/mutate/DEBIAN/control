@@ -1,8 +1,8 @@
 Package: mutate
-Version: 1.0-1
+Version: 1.1
 Architecture: amd64
 Maintainer: Wei Qiang <wei.qianghb@foxmail.com>
-Installed-Size: 901
+Installed-Size: 899
 Depends: fcitx-libs-qt5, qt5-qmake, qtbase5-dev, libqt5x11extras5-dev, libboost-regex1.55.0
 Section: utils
 Priority: optional
