@@ -34,6 +34,7 @@ public:
     void hotkeyPressed();
     void setOne();
     void enterCurItem();
+    float Height;
     ~Widget();
 
 private:

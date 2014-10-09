@@ -20,6 +20,7 @@ Setting::Setting(QWidget *parent) :
         auto sects = cp.getSections();
         for (int i = 0; i != sects.size(); i++)
         {
+
             int row_count = ui->tableWidget->rowCount();
             ui->tableWidget->insertRow(row_count);
             QTableWidgetItem *name = new QTableWidgetItem();
@@ -33,6 +34,10 @@ Setting::Setting(QWidget *parent) :
             hotkey->setText(QString::fromStdString(cp.getValue(sects[i], "HotKey")));
             keyword->setText(QString::fromStdString(sects[i]));
             argument->setText(QString::fromStdString(cp.getValue(sects[i], "Argument")));
+            if (sects[i] == "default")
+            {
+                ui->Height->setText(QString::fromStdString(cp.getValue(sects[i], "Height")));
+            }
             ui->tableWidget->setItem(row_count, 0, name);
             ui->tableWidget->setItem(row_count, 1, icon);
             ui->tableWidget->setItem(row_count, 2, hotkey);
@@ -114,8 +119,14 @@ void Setting::saveItems()
         out << "IconAddress" << '=' << ui->tableWidget->item(i, 1)->text().toStdString() << std::endl;
         out << "HotKey" << '=' << ui->tableWidget->item(i, 2)->text().toStdString() << std::endl;
         out << "Argument" << '=' << ui->tableWidget->item(i, 4)->text().toStdString() << std::endl;
+        if (ui->tableWidget->item(i, 3)->text().toStdString() == "default")
+        {
+            out << "Height" << '=' << ui->Height->text().toStdString() << std::endl;
+        }
     }
     out.close();
+    QApplication::quit();
+    QProcess::startDetached(QApplication::applicationFilePath());
 }
 
 void Setting::deleteItem()

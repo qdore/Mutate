@@ -1,4 +1,4 @@
-mutate (1.1) trusty; urgency=low
+mutate (1.3) trusty; urgency=low
 
   * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
 

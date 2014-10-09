@@ -1,4 +1,5 @@
 #include "config.h"
+#include "widget.h"
 
 std::string getHomPath()
 {
@@ -26,5 +27,8 @@ void CenterToScreen(QWidget* widget)
   int desk_x = desk_rect.width();
   int desk_y = desk_rect.height();
   int x = widget->width();
-  widget->move(desk_x / 2 - x / 2 + desk_rect.left(), (desk_y - beginheight - rowsize * (MAXPRINTSIZE - 1)) / 2 );
+  widget->move(desk_x / 2 - x / 2 + desk_rect.left(), \
+               (desk_y - beginheight - \
+                rowsize * (MAXPRINTSIZE - 1)) \
+               * ((Widget*)(widget))->Height);
 }

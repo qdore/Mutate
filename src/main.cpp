@@ -35,16 +35,17 @@ int main(int argc, char *argv[])
     }
     a.setWindowIcon(QIcon(SEARCHICON));
     a.setQuitOnLastWindowClosed(false);
-    Widget * w = new Widget;
+    std::shared_ptr<Widget> w(new Widget);
     try{
         shared_ptr<ConfigParse> cp(new ConfigParse(CONFPATH));
+        w->Height = std::stof(cp->getValue("default","Height"));
         for (const string& keyword: cp->getSections())
         {
             if (keyword == "default")
             {
                 string default_key = cp->getValue(keyword, "HotKey");
-                QxtGlobalShortcut *shortcut = new QxtGlobalShortcut(QKeySequence(default_key.c_str()), w);
-                QObject::connect(shortcut, &QxtGlobalShortcut::activated, w, &Widget::hotkeyPressed);
+                QxtGlobalShortcut *shortcut = new QxtGlobalShortcut(QKeySequence(default_key.c_str()), w.get());
+                QObject::connect(shortcut, &QxtGlobalShortcut::activated, w.get(), &Widget::hotkeyPressed);
             }
             else {
                 string default_key = cp->getValue(keyword, "HotKey");
@@ -52,23 +53,23 @@ int main(int argc, char *argv[])
                     QxtGlobalShortcut *shortcut;
                     if (cp->getValue(keyword, "Argument") == "need")
                     {
-                        shortcut = new QxtGlobalShortcut(QKeySequence(default_key.c_str()),  w, keyword, true);
+                        shortcut = new QxtGlobalShortcut(QKeySequence(default_key.c_str()),  w.get(), keyword, true);
                     }
                     else
                     {
-                        shortcut = new QxtGlobalShortcut(QKeySequence(default_key.c_str()),  w, keyword, false);
+                        shortcut = new QxtGlobalShortcut(QKeySequence(default_key.c_str()),  w.get(), keyword, false);
                     }
-                    QObject::connect(shortcut, SIGNAL(activated(std::string, bool)), w, SLOT(OtherhotkeyPressed(std::string, bool)));
+                    QObject::connect(shortcut, SIGNAL(activated(std::string, bool)), w.get(), SLOT(OtherhotkeyPressed(std::string, bool)));
                 }
             }
         }
     }
     catch(...)
     {
-        QxtGlobalShortcut *shortcut = new QxtGlobalShortcut(QKeySequence("Alt+d"), w);
-        QObject::connect(shortcut, &QxtGlobalShortcut::activated, w, &Widget::hotkeyPressed);
+        QxtGlobalShortcut *shortcut = new QxtGlobalShortcut(QKeySequence("Alt+d"), w.get());
+        QObject::connect(shortcut, &QxtGlobalShortcut::activated, w.get(), &Widget::hotkeyPressed);
     }
-    std::shared_ptr<SearchApp> s(new SearchApp(w));
+    std::shared_ptr<SearchApp> s(new SearchApp(w.get()));
     s->start();
     w->hotkeyPressed();
     return a.exec();

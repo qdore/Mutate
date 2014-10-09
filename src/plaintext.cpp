@@ -69,8 +69,7 @@ void PlainText::enterListWidget(int row)
         this->parent->hide();
         if (!(*val)[row].command.empty())
         {
-            QProcess *newProcess = new QProcess();
-            newProcess->start(QString::fromStdString((*val)[row].command));
+            QProcess::startDetached(QString::fromStdString((*val)[row].command));
             fparse.addValue((*val)[row].text, 1);
             fparse.storeValue();
         }
