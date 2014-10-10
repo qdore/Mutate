@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Exec=mutate
+Name=Mutate
+Name[zh_CN]=Mutate
+X-KDE-StartupNotify=true
+Comment=Mutate
+Icon=/usr/share/icons/mutate.png
+Terminal=false
+Type=Application
+Categories=Application;Utility;
