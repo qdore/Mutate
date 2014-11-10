@@ -1,5 +1,5 @@
 #!/bin/bash
 echo [$@]
-echo "command=xdg-open \"http://www.google.com.hk/webhp?hl=zh-CN#safe=strict&hl=zh-CN&q=$@\""
+echo "command=xdg-open \"https://www.google.com/search?q=$@\""
 echo "icon="
 echo "subtext=Search on google for $@"
