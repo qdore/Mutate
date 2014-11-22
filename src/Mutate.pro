@@ -11,9 +11,13 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 include(qxtglobalshortcut/qxtglobalshortcut.pri)
 include(qtsinglecoreapplication/qtsinglecoreapplication.pri)
 
+isEmpty(PREFIX) {
+ PREFIX = /usr/local/bin
+}
+
 TARGET = mutate
 TEMPLATE = app
-target.path = /usr/local/bin
+target.path = $$PREFIX/
 INSTALLS = target
 
 
