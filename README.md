@@ -1,52 +1,96 @@
 Mutate - An award-winning productivity application
 ======
 
-Mutate is a simple quick start tool inspired by Alfred(OS X app) for ubuntu.Be more productive with hotkeys, keywords and file actions at your fingertips.
- 
-##How to install:
-
-    Ubuntu 14.04:
-    sudo add-apt-repository ppa:wei-qianghb/mutate
-    sudo apt-get update
-    sudo apt-get install mutate
-
-    Others:
-    xdg-open <mutate_1.0>/release/mutate_1.0.deb
-	
-##Loaded with features to increase your productivity
-----
-###Find Applications & Files
-![applications demo](http://i.imgur.com/dyNHVwU.png)
-###Find Files
-![files demo](http://i.imgur.com/4Jx878l.png)
-###kill process
-![killprocess demo](http://i.imgur.com/XSciIex.png)
-###google translate
-####Select some words use your mouse, than press ctrl+t(you can define it )
-![translate demo](http://i.imgur.com/kB4YSqU.jpg)
-####or input 'tr' and some words
-![translate demo](http://i.imgur.com/gycjZeY.png)
-###Quick-Search the Web
-####google search
-![google demo](http://i.imgur.com/oRtXJBu.png)
-####github search
-![github demo](http://i.imgur.com/oIVCSqS.png)
-You can add other keywods such as keywords like wiki, twitter or youtube.
-###open url
-![url demo](http://i.imgur.com/2JFFMZz.png)
-####quickly shut down or log out or reboot
-![shutdown demo](http://i.imgur.com/yvyyUDb.png)
-
+Mutate is a simple launcher inspired by Alfred (OS X app) for Ubuntu. Be more productive with hotkeys, keywords and file actions at your fingertips.
 
 ![url demo](http://i.imgur.com/bnBvfgw.png)
 
-##Preference:
-####Type preference to open the setting widget
-The first row means default hotkey to open mutate is Ctrl+D,also you can redefine it.
-Other scripts's keyword, take google_translate for example.If you press Ctrl+T,it will type 'tr ' and the mouse selected text into the line editor.
+## Installing
+### From Source
+Download and compile:
+```bash
+git clone https://github.com/qdore/Mutate.git
+cd Mutate/src
+qmake-qt5
+make
+```
+
+Then install it:
+```bash
+sudo make install
+cd ..
+sudo cp info/mutate.png /usr/share/icons
+sudo cp info/Mutate.desktop /usr/share/applications
+mkdir -p ~/.config/Mutate
+cp -R config/* ~/.config/Mutate
+chmod -R a+x ~/.config/Mutate/scripts
+chmod -R a+w ~/.config/Mutate
+```
+
+### From Ubuntu PPA
+```bash
+sudo add-apt-repository ppa:wei-qianghb/mutate
+sudo apt-get update
+sudo apt-get install mutate
+```
+
+### From Package Release
+```bash
+git clone https://github.com/qdore/Mutate.git
+cd Mutate/release
+xdg-open mutate_2.0.deb
+```
+	
+## Features
+Loaded with features to increase your productivity.
+
+### Find Applications & Files
+![applications demo](http://i.imgur.com/dyNHVwU.png)
+
+### Find Files
+![files demo](http://i.imgur.com/4Jx878l.png)
+
+### Kill Processes
+![killprocess demo](http://i.imgur.com/XSciIex.png)
+
+### Google Translate
+Select some words use your mouse, then press Ctrl+T (user configurable):
+![translate demo](http://i.imgur.com/kB4YSqU.jpg)
+
+Or type 'tr' and some words:
+![translate demo](http://i.imgur.com/gycjZeY.png)
+
+### Quickly Search the Web
+#### Google Search
+![google demo](http://i.imgur.com/oRtXJBu.png)
+
+#### Github Search
+![github demo](http://i.imgur.com/oIVCSqS.png)
+
+You can also add other keywords such as wiki, twitter or youtube.
+
+### Open URLs
+![url demo](http://i.imgur.com/2JFFMZz.png)
+
+### Quickly Shut Down, Log Out, or Reboot
+![shutdown demo](http://i.imgur.com/yvyyUDb.png)
+
+
+## Preferences
+Type preference to open the preferences window.
+
+The first row is for the hotkey to open Mutate. The default is Ctrl+D.
+
+Other rows configure the path, icon path, hotkey, and keyword for different 
+scritps. For example, google_translate's hotkey is configured as Ctrl+T, and 
+when you press it Mutate will type 'tr' and the selected text.
+
 ![preferemce demo](http://i.imgur.com/1hHLY6r.png)
-####How to write scripts
-When you type "tr work" in the line editor,mutate will execute ./google_translate.py in the backgrouder.
+
+## Custom Scripts
+When you type "tr work" in the line editor, Mutate will execute 
+./google_translate.py in the background.
+
 ```
 ./google_translate.py work
 [工作]
@@ -94,5 +138,6 @@ command can be shell command, it means if you enter this item it will do this sh
 
 It isn't hard to know what does it mean, and it is also very easy to write a script.
 In the "~/.config/Mutate/scripts",it has some scripts for examples.
-###Contact: wei.qianghb@foxmail.com
+
+## Contact: wei.qianghb@foxmail.com
 
