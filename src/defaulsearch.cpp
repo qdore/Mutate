@@ -97,11 +97,14 @@ catch (...)
 
 void defaulSearch::searchScripts(bool& searchApp)
 {
+    std::string tmp = keyword;
+    boost::to_lower(keyword);
     if (keyword.empty())
     {
         return;
     }
-    if (std::string("preference").find(keyword) != std::string::npos)
+    if (std::string("preference").find(keyword) != std::string::npos ||
+        std::string("PREFERENCE").find(keyword) != std::string::npos)
     {
         vals.push_back(returnByScript(
                            SETICON,
@@ -237,6 +240,7 @@ void defaulSearch::searchScripts(bool& searchApp)
     }
     catch (...)
     {}
+    keyword = std::move(tmp);
 }
 
 void defaulSearch::searchApps(const pair& map)
