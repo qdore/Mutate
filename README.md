@@ -85,6 +85,10 @@ Other rows configure the path, icon path, hotkey, and keyword for different
 scritps. For example, google_translate's hotkey is configured as Ctrl+T, and 
 when you press it Mutate will type 'tr' and the selected text.
 
+```
+NOTE:If you want use key 'super' as your hotkey, type Meta will help.
+```
+
 ![preferemce demo](http://i.imgur.com/1hHLY6r.png)
 
 ## Custom Scripts
