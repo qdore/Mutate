@@ -17,9 +17,10 @@ class defaulSearch
 public:
     defaulSearch(std::string keyword);
     std::vector<returnByScript> getReturnVec(const pair& map);
-    void searchApps(const pair& map);
-    void searchScripts(bool& searchApp);
+    void searchApps(const pair& map, bool& changeCalc);
+    void searchScripts();
     void netSearch(bool& searchApp);
+    void calcSearch(bool& changeCalc);
 };
 
 #endif // DEFAULSEARCH_H

@@ -1,4 +1,4 @@
-mutate (2.0) trusty; urgency=low
+mutate (2.3~precise~NoolsLab.com) precise; urgency=low
 
   * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
 

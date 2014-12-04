@@ -11,13 +11,11 @@ try:
 except:
     print "[..?]\ncommand=echo yo\nicon=\nsubtext=install *sympy* for calculator!"
     sys.exit(0)
-
+cmd = ""
 for i in range(1, len(sys.argv)):
-    cmd = sys.argv[i]
-
-    expr = sympify(cmd)
-
-    print '[' + str(expr) + ']'
-    print "command=echo -n '"+str(expr)+"' | xclip -sel clip"
-    print "icon="
-    print "subtext=copy result to clipboard"
+    cmd = cmd + sys.argv[i]
+expr = sympify(cmd)
+print '[' + str(expr) + ']'
+print "command=copy"
+print "icon="
+print "subtext=copy result to clipboard"

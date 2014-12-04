@@ -36,10 +36,12 @@ void trSpace(std::string& line)
 std::vector<returnByScript> defaulSearch::getReturnVec(const pair& map)
 {
     vals.clear();
-    bool searchApp = 1;
+    bool searchApp = true;
+    bool addCalc = false;
     if (searchApp) netSearch(searchApp);
-    searchScripts(searchApp);
-    if (searchApp) searchApps(map);
+    if (searchApp) calcSearch(addCalc);
+    searchScripts();
+    if (searchApp) searchApps(map, addCalc);
     if (vals.empty() && !keyword.empty())
     {
         vals.push_back(returnByScript(
@@ -95,7 +97,39 @@ try
 catch (...)
 {}
 
-void defaulSearch::searchScripts(bool& searchApp)
+void defaulSearch::calcSearch(bool &changeCalc)
+{
+    if (keyword.find("...") == std::string::npos) {
+        bool has_number = false;
+        bool has_operator = false;
+        for (auto x: keyword) {
+            switch (x) {
+                case '+':
+                case '-':
+                case '*':
+                case '/':
+                case '^':
+                case '(':
+                case ')':{
+                        has_operator = true;
+                        break;
+                }
+            }
+            if (x <= '9' && x >= '0') {
+                has_number = true;
+            }
+            if (has_operator && has_number) {
+                changeCalc = true;
+                keyword = std::string("... ") + keyword;
+                return;
+            }
+
+        }
+    }
+
+}
+
+void defaulSearch::searchScripts()
 {
     std::string tmp = keyword;
     boost::to_lower(keyword);
@@ -122,7 +156,6 @@ void defaulSearch::searchScripts(bool& searchApp)
             std::string begtmp = *beg;
             if (keyword.substr(0, begtmp.size()) == begtmp && keyword[begtmp.size()] == ' ')
             {
-                searchApp = 0;
                 if (keyword.size() == begtmp.size() + 1)
                 {
                     vals.push_back(returnByScript(
@@ -212,7 +245,6 @@ void defaulSearch::searchScripts(bool& searchApp)
                                 )
                            );
                 }
-                searchApp = 0;
                 break;
             }
             if (begtmp.find(keyword) == 0)
@@ -243,8 +275,9 @@ void defaulSearch::searchScripts(bool& searchApp)
     keyword = std::move(tmp);
 }
 
-void defaulSearch::searchApps(const pair& map)
+void defaulSearch::searchApps(const pair& map, bool &changeCalc)
 {
+    if (changeCalc) keyword = keyword.substr(4, keyword.size());
     if (keyword.empty()) return;
     auto keyword_bak = keyword;
     for (const auto& x:map)

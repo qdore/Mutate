@@ -2,13 +2,27 @@ Mutate - An award-winning productivity application
 ======
 
 Mutate is a simple launcher inspired by Alfred (OS X app) for Ubuntu. Be more productive with hotkeys, keywords and file actions at your fingertips.
+```
+Attention:In this version, the profiles will be covered!
+```
 
 ![url demo](http://i.imgur.com/bnBvfgw.png)
 
 ## Installing
+
+### From Ubuntu PPA
+```bash
+sudo add-apt-repository ppa:mutate/ppa
+sudo apt-get update
+sudo apt-get install mutate
+
+NOTE: PPA has changed, please delete wei-qianghb/mutate first
+```
+
 ### From Source
 Download and compile:
-```bash
+```
+bash
 git clone https://github.com/qdore/Mutate.git
 cd Mutate/src
 qmake-qt5
@@ -27,18 +41,12 @@ chmod -R a+x ~/.config/Mutate/scripts
 chmod -R a+w ~/.config/Mutate
 ```
 
-### From Ubuntu PPA
-```bash
-sudo add-apt-repository ppa:wei-qianghb/mutate
-sudo apt-get update
-sudo apt-get install mutate
-```
-
 ### From Package Release
 ```bash
 git clone https://github.com/qdore/Mutate.git
 cd Mutate/release
-xdg-open mutate_2.0.deb
+sudo apt-get install gdebi
+sudo gdebi mutate_2.3.deb
 ```
 	
 ## Features
@@ -49,6 +57,15 @@ Loaded with features to increase your productivity.
 
 ### Find Files
 ![files demo](http://i.imgur.com/4Jx878l.png)
+
+### Calculate(thanks t413)
+```
+NOTE:You must install sympy first:
+sudo apt-get install python-pip
+sudo pip install sympy
+```
+
+![calculate_demo](http://i.imgur.com/py09Ewv.png)
 
 ### Kill Processes
 ![killprocess demo](http://i.imgur.com/XSciIex.png)
