@@ -21,8 +21,7 @@ NOTE: PPA has changed, please delete wei-qianghb/mutate first
 
 ### From Source
 Download and compile:
-```
-bash
+```bash
 git clone https://github.com/qdore/Mutate.git
 cd Mutate/src
 qmake-qt5
