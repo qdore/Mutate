@@ -10,7 +10,7 @@ Attention:In this version, the profiles will be covered!
 
 ## Installing
 
-### From Ubuntu PPA
+### From Ubuntu PPA(thanks http://www.noobslab.com)
 ```bash
 sudo add-apt-repository ppa:mutate/ppa
 sudo apt-get update
