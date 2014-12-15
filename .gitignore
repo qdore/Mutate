@@ -22,3 +22,7 @@ src/ui_hotkey.h
 src/ui_listitem.h
 src/ui_setting.h
 src/ui_widget.h
+
+# Log Files
+*.log
+.DS_Store
