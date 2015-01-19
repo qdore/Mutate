@@ -24,7 +24,7 @@ BIT64=x86_64
 if [ ${ARCH} = ${BIT64} ];then
 qm="/usr/lib/x86_64-linux-gnu/qt5/bin/qmake"
 else
-qm="/usr/lib/i686-linux-gnu/qt5/bin/qmake"
+qm="/usr/lib/i386-linux-gnu/qt5/bin/qmake"
 fi
 
 cd $dire && gunzip *.gz && tar -xf *.tar && cd src && ${qm} . && make && make install
