@@ -68,6 +68,7 @@ sudo gdebi mutate_2.3.deb
 ### Fedora
 ```bash
 sudo yum -y install https://github.com/qdore/Mutate/raw/master/release/Mutate-2.3-0.fc21.x86_64.rpm
+/usr/share/mutate/setup
 ```
 
 ## Features
