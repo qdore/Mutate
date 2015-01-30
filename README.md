@@ -1,7 +1,7 @@
 Mutate - An award-winning productivity application
 ======
 
-Mutate is a simple launcher inspired by Alfred (OS X app) for Ubuntu. Be more productive with hotkeys, keywords and file actions at your fingertips.
+Mutate is a simple launcher inspired by Alfred (OS X app) for Linux. Be more productive with hotkeys, keywords and file actions at your fingertips.
 ```
 Attention:In this version, the profiles will be covered!
 ```
@@ -43,17 +43,17 @@ chmod -R a+w ~/.config/Mutate
 
 ### Fedora
 ```bash
-sudo yum -y install wget rpmdevtools yum-utils
+sudo yum -y install rpmdevtools yum-utils
 rpmdev-setuptree
 cd ~/rpmbuild/SOURCES
-wget https://raw.githubusercontent.com/retspen/Mutate/master/rpm/mutate.spec
-wget https://github.com/retspen/Mutate/archive/master.zip
+wget https://raw.githubusercontent.com/qdore/Mutate/master/rpm/mutate.spec
+wget https://github.com/qdore/Mutate/archive/master.zip
 sudo yum-builddep -y mutate.spec
 rpmbuild -bb mutate.spec
 ```
 Then install it:
 ```bash
-sudo yum -y install ~/rpmbuild/RPMS/x86_64/rpmbuild/RPMS/x86_64/Mutate-2.3-0.fc20.x86_64.rpm
+sudo yum -y install ~/rpmbuild/RPMS/x86_64/Mutate-2.3-0.fc21.x86_64.rpm
 /usr/share/mutate/setup
 ```
 
@@ -67,8 +67,7 @@ sudo gdebi mutate_2.3.deb
 
 ### Fedora
 ```bash
-wget https://github.com/qdore/Mutate/raw/master/release/Mutate-2.3-0.fc20.x86_64.rpm
-sudo yum -y install Mutate-2.3-0.fc20.x86_64.rpm
+sudo yum -y install https://github.com/qdore/Mutate/raw/master/release/Mutate-2.3-0.fc21.x86_64.rpm
 ```
 
 ## Features
