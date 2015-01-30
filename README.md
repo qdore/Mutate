@@ -20,6 +20,7 @@ NOTE: PPA has changed, please delete wei-qianghb/mutate first
 ```
 
 ### From Source
+### Ubuntu
 Download and compile:
 ```bash
 git clone https://github.com/qdore/Mutate.git
@@ -40,14 +41,36 @@ chmod -R a+x ~/.config/Mutate/scripts
 chmod -R a+w ~/.config/Mutate
 ```
 
-### From Package Release
+### Fedora
 ```bash
-git clone https://github.com/qdore/Mutate.git
-cd Mutate/release
+sudo yum -y install wget rpmdevtools yum-utils
+rpmdev-setuptree
+cd ~/rpmbuild/SOURCES
+wget https://raw.githubusercontent.com/retspen/Mutate/master/rpm/mutate.spec
+wget https://github.com/retspen/Mutate/archive/master.zip
+sudo yum-builddep -y mutate.spec
+rpmbuild -bb mutate.spec
+```
+Then install it:
+```bash
+sudo yum -y install ~/rpmbuild/RPMS/x86_64/rpmbuild/RPMS/x86_64/Mutate-2.3-0.fc20.x86_64.rpm
+/usr/share/mutate/setup
+```
+
+### From Package Release
+### Ubuntu
+```bash
+wget https://github.com/qdore/Mutate/raw/master/release/mutate_2.3.deb
 sudo apt-get install gdebi
 sudo gdebi mutate_2.3.deb
 ```
-	
+
+### Fedora
+```bash
+wget https://github.com/qdore/Mutate/raw/master/release/Mutate-2.3-0.fc20.x86_64.rpm
+sudo yum -y install Mutate-2.3-0.fc20.x86_64.rpm
+```
+
 ## Features
 Loaded with features to increase your productivity.
 
