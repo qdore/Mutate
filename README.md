@@ -41,7 +41,7 @@ chmod -R a+x ~/.config/Mutate/scripts
 chmod -R a+w ~/.config/Mutate
 ```
 
-### Fedora
+### Fedora (Thanks retspen)
 ```bash
 sudo yum -y install rpmdevtools yum-utils
 rpmdev-setuptree
