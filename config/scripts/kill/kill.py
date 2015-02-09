@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python2
 
 #text command icon subtext
 import subprocess, gio, sys
