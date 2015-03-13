@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
     if (a.isRunning())
     {
         QMessageBox* x = new QMessageBox();
-        x->setText(QObject::tr("One Application May be running!Please try again~"));
+        x->setText(QObject::tr("Mutate is already running."));
         x->exec();
         return -1;
     }
