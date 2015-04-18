@@ -22,7 +22,7 @@ void hotkey::keyPressEvent(QKeyEvent *event)
     {
        return;
     }
-    if(key == Qt::Key_Control || key == Qt::Key_Shift || key == Qt::Key_Alt )
+    if(key == Qt::Key_Control || key == Qt::Key_Shift || key == Qt::Key_Alt || key == Qt::Key_Meta)
     {
         return ;
     }
@@ -33,6 +33,8 @@ void hotkey::keyPressEvent(QKeyEvent *event)
         uKey += Qt::CTRL;
     if(modifiers & Qt::AltModifier)
         uKey += Qt::ALT;
+    if(modifiers & Qt::MetaModifier)
+        uKey += Qt::META;
     ui->label_2->setText(QKeySequence(uKey).toString());
     this->s->setText(QKeySequence(uKey).toString());
 }
