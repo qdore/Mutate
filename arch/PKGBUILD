@@ -13,7 +13,7 @@ depends=('fcitx-qt5' 'qt5-base' 'qt5-x11extras' 'boost' 'gtk2' 'icu'
 provides=("${_pkgname}")
 conflicts=("${_pkgname}")
 source=("https://github.com/qdore/Mutate/archive/v2.4.tar.gz")
-sha512sums=('SKIP')
+sha512sums=('04d2a9980f578161c9ba2859e3f55d0a4f33ea5551af311fdf2fb8884a6699560b00f30920248e42d8b046dfc495bb414cf2937212db7bb6de9e715615cf5edd')
 install=${_pkgname}.install
 license=('MIT')
 
