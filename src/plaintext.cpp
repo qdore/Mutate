@@ -66,6 +66,13 @@ void PlainText::enterListWidget(int row)
         {
             return;
         }
+
+        if ((*val)[row].command == "quit")
+        {
+            (*aptr).quit();
+            return;
+        }
+
         this->parent->hide();
         if (!(*val)[row].command.empty())
         {
@@ -120,4 +127,9 @@ void PlainText::keyPressEvent(QKeyEvent* event)
 void PlainText::focusOutEvent(QFocusEvent *event)
 {
     //this->parent->hide();
+}
+
+void PlainText::setApp(SingleApplication* app)
+{
+    aptr = app;
 }

@@ -299,3 +299,8 @@ Widget::~Widget()
 {
     delete ui;
 }
+
+void Widget::setApp(SingleApplication *app)
+{
+    plainTextEdit->setApp(app);
+}

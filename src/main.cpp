@@ -84,6 +84,7 @@ int main(int argc, char *argv[])
     }
     std::shared_ptr<SearchApp> s(new SearchApp(w.get()));
     s->start();
+    w->setApp(&a);
     w->hotkeyPressed();
     return a.exec();
 }

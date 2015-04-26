@@ -12,6 +12,7 @@
 #include "plaintext.h"
 #include "returnbyscript.h"
 #include "config.h"
+#include "singleapplication.h"
 
 typedef std::vector<std::pair<std::string, std::pair<std::string, QIcon*>>> pair;
 typedef std::pair<std::string, std::pair<std::string, QIcon*>> qpair;
@@ -36,6 +37,7 @@ public:
     void enterCurItem();
     float Height;
     ~Widget();
+    void setApp(SingleApplication *app);
 
 private:
     void paint();

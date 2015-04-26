@@ -147,6 +147,17 @@ void defaulSearch::searchScripts()
                            )
                     );
     }
+
+    if (std::string("quit").find(keyword) != std::string::npos ||
+        std::string("QUIT").find(keyword) != std::string::npos)
+    {
+        vals.push_back(returnByScript(
+                           SETICON,
+                           "Quit Mutate",
+                           "quit"
+                           )
+                    );
+    }
     try {
         ConfigParse cp(CONFPATH.c_str());
         auto sects = cp.getSections();
