@@ -1,0 +1,61 @@
+pre_upgrade() {
+	# backup scripts dir to prevent overwriting user scripts
+	for i in `ls /home`; do
+		cp -ar /home/$i/.config/Mutate /home/$i/.config/Mutate.$1
+		mv /home/$i/.config/Mutate.$1 /home/$i/.config/Mutate/
+	done
+
+	rm -r /home/$i/.config/Mutate/scripts
+	rm /home/$i/.config/Mutate/config.ini
+}
+
+post_upgrade() {
+	# copy config files to home directories
+        for i in `ls /home`; do
+                mkdir -p /home/$i/.config/Mutate
+                cp -a /usr/share/doc/mutate/config/* /home/$i/.config/Mutate
+                cat /usr/share/doc/mutate/config/config.ini | sed "s#{home}#`echo /home/$i`#g" > /home/$i/.config/Mutate/config.ini
+                chmod -R a+x /home/$i/.config/Mutate/scripts
+                chmod -R a+w /home/$i/.config/Mutate
+        done
+
+	mv /home/$i/.config/Mutate/config.ini /home/$i/.config/Mutate/config.new.ini
+	cp -a /home/$i/.config/Mutate/Mutate.$1/config.ini /home/$i/.config/Mutate/config.ini
+
+	echo
+	echo The Mutate config directory has been updated. The current version was backed up to ~/.config/Mutate/Mutate.$1
+	echo The new config.ini was installed at ~/.config/Mutate/config.new.ini -- rename it to config.ini to switch to it.
+	echo
+}
+post_install() {
+	# copy config files to home directories
+	for i in `ls /home`; do
+		mkdir -p /home/$i/.config/Mutate
+		cp -a /usr/share/doc/mutate/config/* /home/$i/.config/Mutate
+		cat /usr/share/doc/mutate/config/config.ini | sed "s#{home}#`echo /home/$i`#g" > /home/$i/.config/Mutate/config.ini
+		chmod -R a+x /home/$i/.config/Mutate/scripts
+		chmod -R a+w /home/$i/.config/Mutate
+	done
+
+	# enable fcitx modules for QT
+	# check if they already are enabled
+	fcitx="False"
+	for i in `cat /etc/profile`;do                                       
+		if [ "$i" = "QT5_IM_MODULE=fcitx" ] ;then
+			fcitx="True"
+		fi
+	done
+
+	# if not, enable put it in /etc/profile
+	if [ "$fcitx" = "False" ];then
+		echo "export QT5_IM_MODULE=fcitx" >> /etc/profile
+		echo 'export XMODIFIERS="@im=fcitx"' >> /etc/profile
+	fi
+}
+
+post_remove() {
+	rm -r /usr/share/doc/mutate/config/scripts
+	rm /usr/share/doc/mutate/config/config.ini
+	rmdir /usr/share/doc/mutate/config
+	rmdir /usr/share/doc/mutate
+}

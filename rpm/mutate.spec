@@ -1,5 +1,5 @@
 %global name Mutate
-%global version 2.3
+%global version 2.4
 %global release 0
 
 Name:           %{name}
@@ -53,5 +53,14 @@ rm -rf $RPM_BUILD_ROOT
 /usr/share/applications/Mutate.desktop
 
 %changelog
+* Sun Apr 26 2015 Ian Glen <ian@ianglen.me> - 2.4
+- Fixed issue where Python scripts wouldn't run on systems with Python 3 installed as default
+- Added Google Chrome bookmarks script
+- Added script that shows running processes with top
+- Fixed bug where temporary files weren't removed when killed
+- Meta key can now be assigned as part of the keyboard shortcut
+- Added quit command
+- Minor user interface improvements
+
 * Fri Jan 30 2015 Anatoliy Guskov <anatoliy.guskov@gmail.com> - 2.3
 - first spec version

@@ -1,4 +1,22 @@
-mutate (2.3~precise~NoolsLab.com) precise; urgency=low
+mutate (2.4~precise~NoolsLab.com) precise; urgency=low
+
+  * Fixed issue where Python scripts wouldn't run on systems with 
+    Python 3 installed as default
+
+  * Added Google Chrome bookmarks script
+
+  * Added script that shows running processes with top
+
+  * Fixed bug where temporary files weren't removed when killed
+
+  * Meta key can now be assigned as part of the keyboard shortcut
+
+  * Added quit command
+
+  * Minor user interface improvements
+
+ -- Ian Glen <ian@ianglen.me>  Sun, 26 Apr 2015 17:50:00 -0500
+
 
   * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
 
