@@ -1,27 +1,58 @@
 Mutate - An award-winning productivity application
 ======
-
 Mutate is a simple launcher inspired by Alfred (OS X app) for Linux. Be more productive with hotkeys, keywords and file actions at your fingertips.
-```
-Attention:In this version, the profiles will be covered!
-```
 
 ![url demo](http://i.imgur.com/bnBvfgw.png)
 
-## Installing
 
-### From Ubuntu PPA(thanks http://www.noobslab.com)
+## Dependencies
+* boost
+* QT5
+* GTK2 (for application icon lookup)
+* ICU
+* fcitx-qt5
+* libsm
+* libxkbcommon
+
+
+## Installing
+### From Repository
+#### Ubuntu PPA (thanks http://www.noobslab.com)
+NOTE: PPA has changed, please delete ```wei-qianghb/mutate``` first
+
 ```bash
 sudo add-apt-repository ppa:mutate/ppa
 sudo apt-get update
 sudo apt-get install mutate
-
-NOTE: PPA has changed, please delete wei-qianghb/mutate first
 ```
 
+
+#### Arch Linux AUR
+```bash
+curl -O https://aur.archlinux.org/packages/mu/mutate-git/mutate-git.tar.gz
+tar xvf mutate-git.tar.gz
+cd mutate-git
+makepkg -si
+```
+
+### From Package Release
+#### Ubuntu
+```bash
+wget https://github.com/qdore/Mutate/raw/master/release/mutate_2.3.deb
+sudo apt-get install gdebi
+sudo gdebi mutate_2.3.deb
+```
+
+#### Fedora
+```bash
+sudo yum -y install https://github.com/qdore/Mutate/raw/master/release/Mutate-2.3-0.fc21.x86_64.rpm
+/usr/share/mutate/setup
+```
+
+
 ### From Source
-### Ubuntu
-Download and compile:
+#### Ubuntu
+Install needed dependencies, then download and compile:
 ```bash
 git clone https://github.com/qdore/Mutate.git
 cd Mutate/src
@@ -41,35 +72,28 @@ chmod -R a+x ~/.config/Mutate/scripts
 chmod -R a+w ~/.config/Mutate
 ```
 
-### Fedora (Thanks retspen)
+#### Fedora (Thanks retspen)
+Install needed dependencies:
 ```bash
 sudo yum -y install rpmdevtools yum-utils
 rpmdev-setuptree
+```
+
+Download and compile:
+```bash
 cd ~/rpmbuild/SOURCES
 wget https://raw.githubusercontent.com/qdore/Mutate/master/rpm/mutate.spec
 wget https://github.com/qdore/Mutate/archive/master.zip
 sudo yum-builddep -y mutate.spec
 rpmbuild -bb mutate.spec
 ```
+
 Then install it:
 ```bash
 sudo yum -y install ~/rpmbuild/RPMS/x86_64/Mutate-2.3-0.fc21.x86_64.rpm
 /usr/share/mutate/setup
 ```
 
-### From Package Release
-### Ubuntu
-```bash
-wget https://github.com/qdore/Mutate/raw/master/release/mutate_2.3.deb
-sudo apt-get install gdebi
-sudo gdebi mutate_2.3.deb
-```
-
-### Fedora
-```bash
-sudo yum -y install https://github.com/qdore/Mutate/raw/master/release/Mutate-2.3-0.fc21.x86_64.rpm
-/usr/share/mutate/setup
-```
 
 ## Features
 Loaded with features to increase your productivity.
