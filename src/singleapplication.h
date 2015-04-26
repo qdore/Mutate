@@ -15,6 +15,7 @@ public:
 
 public slots:
     void checkForMessage();
+    void cleanup();
 
 signals:
     void messageAvailable(QString message);

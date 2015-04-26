@@ -29,6 +29,8 @@ SingleApplication::SingleApplication(int &argc, char *argv[], const QString uniq
         QTimer *timer = new QTimer(this);
         connect(timer, SIGNAL(timeout()), this, SLOT(checkForMessage()));
         timer->start(1000);
+
+        connect(this, SIGNAL(aboutToQuit()), this, SLOT(cleanup()));
     }
 }
 
@@ -51,6 +53,12 @@ void SingleApplication::checkForMessage()
     const char *from = byteArray.data();
     memcpy(to, from, qMin(sharedMemory.size(), byteArray.size()));
     sharedMemory.unlock();
+}
+
+void SingleApplication::cleanup()
+{
+    // clean up shared memory before quitting
+    sharedMemory.detach();
 }
 
 // public functions.

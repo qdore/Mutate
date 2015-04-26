@@ -9,6 +9,7 @@
 #include <memory>
 #include <QIcon>
 #include <QDir>
+#include <signal.h>
 #include "widget.h"
 #include "hotkey.h"
 #include "returnbyscript.h"
@@ -17,15 +18,27 @@
 #include "config_parse.h"
 #include "config.h"
 
+SingleApplication *aptr;
+
 using namespace std;
+
+void quit(int sig)
+{
+    printf("Received signal %d, quitting\n", sig);
+    (*aptr).quit();
+}
 
 int main(int argc, char *argv[])
 {
     qRegisterMetaType<QItemSelection>("QItemSelection");
     SingleApplication a(argc, argv, "WEI.QIANG");
+    aptr = &a;
     QDir *config = new QDir;
     if (!config->exists(QString::fromStdString(CFPATH))) config->mkdir(QString::fromStdString(CFPATH));
     delete config;
+    signal(SIGTERM, quit);
+    signal(SIGHUP, quit);
+    signal(SIGINT, quit);
     if (a.isRunning())
     {
         QMessageBox* x = new QMessageBox();
