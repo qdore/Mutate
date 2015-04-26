@@ -152,7 +152,7 @@ void defaulSearch::searchScripts()
         std::string("QUIT").find(keyword) != std::string::npos)
     {
         vals.push_back(returnByScript(
-                           SETICON,
+                           QUITICON,
                            "Quit Mutate",
                            "quit"
                            )

@@ -5,5 +5,6 @@
         <file>icons/workflow_openurl.png</file>
         <file>icons/application-x-executable.png</file>
         <file>icons/setting.png</file>
+        <file>icons/quit.png</file>
     </qresource>
 </RCC>

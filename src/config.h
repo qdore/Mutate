@@ -17,6 +17,7 @@
 #define ICON ":/icons/icons/search.png"
 #define INTERNETICON ":/icons/icons/workflow_openurl.png"
 #define SETICON ":/icons/icons/setting.png"
+#define QUITICON ":/icons/icons/quit.png"
 #define SEARCHICON ":/icons/icons/google.png"
 #define EXEICON ":/icons/icons/application-x-executable.png"
 
