@@ -1,6 +1,6 @@
 build-Mutate-Desktop-Debug/
 build-Mutate-Desktop-Release/
-src/Mutate.pro.user
+src/Mutate.pro.user*
 src/Makefile
 src/*.o
 src/mutate
