@@ -38,14 +38,14 @@ makepkg -si
 ### From Package Release
 #### Ubuntu
 ```bash
-wget https://github.com/qdore/Mutate/raw/master/release/mutate_2.3.deb
+wget https://github.com/qdore/Mutate/releases/download/v2.3/Mutate-2.3.deb
 sudo apt-get install gdebi
-sudo gdebi mutate_2.3.deb
+sudo gdebi Mutate-2.3.deb
 ```
 
 #### Fedora
 ```bash
-sudo yum -y install https://github.com/qdore/Mutate/raw/master/release/Mutate-2.3-0.fc21.x86_64.rpm
+sudo yum -y install https://github.com/qdore/Mutate/releases/download/v2.3/Mutate-2.3-0.fc21.x86_64.rpm
 /usr/share/mutate/setup
 ```
 
