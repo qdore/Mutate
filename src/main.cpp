@@ -86,5 +86,8 @@ int main(int argc, char *argv[])
     s->start();
     w->setApp(&a);
     w->hotkeyPressed();
+    if (argc > 1 && argv[1] == std::string("--hidden")) {
+        w->hide();
+    }
     return a.exec();
 }
