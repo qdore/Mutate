@@ -4,11 +4,11 @@ __pkgname=Mutate
 _pkgname=mutate
 pkgname=${_pkgname}
 pkgver=2.4
-pkgrel=1
+pkgrel=2
 pkgdesc='A simple launcher inspired by Alfred.'
 arch=('i686' 'x86_64')
 url="https://github.com/qdore/$__pkgname"
-depends=('fcitx-qt5' 'qt5-base' 'qt5-x11extras' 'boost' 'gtk2' 'icu' 
+depends=('qt5-base' 'qt5-x11extras' 'boost' 'gtk2' 'icu' 
 'libxkbcommon-x11' 'libsm')
 provides=("${_pkgname}")
 conflicts=("${_pkgname}")

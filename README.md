@@ -10,7 +10,6 @@ Mutate is a simple launcher inspired by Alfred (OS X app) for Linux. Be more pro
 * QT5
 * GTK2 (for application icon lookup)
 * ICU
-* fcitx-qt5
 * libsm
 * libxkbcommon
 

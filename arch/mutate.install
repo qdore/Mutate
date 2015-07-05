@@ -36,21 +36,6 @@ post_install() {
 		chmod -R a+x /home/$i/.config/Mutate/scripts
 		chmod -R a+w /home/$i/.config/Mutate
 	done
-
-	# enable fcitx modules for QT
-	# check if they already are enabled
-	fcitx="False"
-	for i in `cat /etc/profile`;do                                       
-		if [ "$i" = "QT5_IM_MODULE=fcitx" ] ;then
-			fcitx="True"
-		fi
-	done
-
-	# if not, enable put it in /etc/profile
-	if [ "$fcitx" = "False" ];then
-		echo "export QT5_IM_MODULE=fcitx" >> /etc/profile
-		echo 'export XMODIFIERS="@im=fcitx"' >> /etc/profile
-	fi
 }
 
 post_remove() {
