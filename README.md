@@ -6,7 +6,7 @@ Mutate is a simple launcher inspired by Alfred (OS X app) for Linux. Be more pro
 
 
 ## Dependencies
-* boost
+* boost-regex
 * QT5
 * GTK2 (for application icon lookup)
 * ICU
@@ -51,11 +51,16 @@ sudo yum -y install https://github.com/qdore/Mutate/releases/download/v2.3/Mutat
 
 ### From Source
 #### Ubuntu
-Install needed dependencies, then download and compile:
+Install needed dependencies:
+```bash
+sudo apt-get install build-essential qt5-qmake qt5-default libgtk2.0-dev libqt5x11extras5-dev libboost-regex-dev
+```
+
+Then download and compile:
 ```bash
 git clone https://github.com/qdore/Mutate.git
 cd Mutate/src
-qmake-qt5
+qmake
 make
 ```
 
