@@ -18,7 +18,7 @@ Setting::Setting(QWidget *parent) :
     try {
         ConfigParse cp(CONFPATH);
         auto sects = cp.getSections();
-        for (int i = 0; i != sects.size(); i++)
+        for (unsigned int i = 0; i != sects.size(); i++)
         {
 
             int row_count = ui->tableWidget->rowCount();

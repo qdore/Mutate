@@ -11,8 +11,8 @@
 using namespace std;
 
 PlainText::PlainText(const char *file, QWidget *parent):
-    fparse(file),
-    QPlainTextEdit(parent)
+    QPlainTextEdit(parent),
+    fparse(file)
 {}
 void PlainText::enterCurrentRow()
 {
@@ -124,7 +124,7 @@ void PlainText::keyPressEvent(QKeyEvent* event)
     }
     QPlainTextEdit::keyPressEvent(event);
 }
-void PlainText::focusOutEvent(QFocusEvent *event)
+void PlainText::focusOutEvent(QFocusEvent*)
 {
     //this->parent->hide();
 }

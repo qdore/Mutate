@@ -4,7 +4,7 @@
 #include <string>
 #include <QCoreApplication>
 
-WidgetThread::WidgetThread(QWidget* w, QWidget *parent):w(w)
+WidgetThread::WidgetThread(QWidget* w, QWidget*):w(w)
 {}
 void WidgetThread::run()
 {
@@ -21,7 +21,7 @@ void WidgetThread::run()
     static_cast<Widget*>(w)->mutex_thread->unlock();
 }
 
-SearchApp::SearchApp(QWidget* w, QWidget *parent):w(w)
+SearchApp::SearchApp(QWidget* w, QWidget*):w(w)
 {}
 
 void SearchApp::run()

@@ -2,8 +2,8 @@
 #include "ui_hotkey.h"
 
 hotkey::hotkey(QWidget *parent) :
-    s(s),
     QWidget(parent),
+    s(),
     ui(new Ui::hotkey)
 {
     ui->setupUi(this);
@@ -39,7 +39,7 @@ void hotkey::keyPressEvent(QKeyEvent *event)
     this->s->setText(QKeySequence(uKey).toString());
 }
 
-void hotkey::keyReleaseEvent(QKeyEvent *event)
+void hotkey::keyReleaseEvent(QKeyEvent*)
 {
     this->~hotkey();
 }
