@@ -21,6 +21,7 @@ public:
     void searchScripts();
     void netSearch(bool& searchApp);
     void calcSearch(bool& changeCalc);
+    bool noScriptMatches();
 };
 
 #endif // DEFAULSEARCH_H

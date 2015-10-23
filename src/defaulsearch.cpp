@@ -39,7 +39,7 @@ std::vector<returnByScript> defaulSearch::getReturnVec(const pair& map)
     bool searchApp = true;
     bool addCalc = false;
     if (searchApp) netSearch(searchApp);
-    if (searchApp) calcSearch(addCalc);
+    if (searchApp && noScriptMatches()) calcSearch(addCalc);
     searchScripts();
     if (searchApp) searchApps(map, addCalc);
     if (vals.empty() && !keyword.empty())
@@ -51,6 +51,26 @@ std::vector<returnByScript> defaulSearch::getReturnVec(const pair& map)
                            ));
     }
     return vals;
+}
+
+bool defaulSearch::noScriptMatches()
+{
+    try {
+        ConfigParse cp(CONFPATH.c_str());
+        auto sects = cp.getSections();
+        for (auto beg = sects.begin(); beg != sects.end(); beg++)
+        {
+            if (*beg == "default") continue;
+            std::string begtmp = *beg;
+            if (keyword.substr(0, begtmp.size()) == begtmp && keyword[begtmp.size()] == ' ')
+            {
+                return false;
+            }
+        }
+    }
+    catch (...)
+    {}
+    return true;
 }
 
 void defaulSearch::netSearch(bool& searchApp)
