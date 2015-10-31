@@ -74,6 +74,7 @@ mkdir -p ~/.config/Mutate
 cp -R config/* ~/.config/Mutate
 chmod -R a+x ~/.config/Mutate/scripts
 chmod -R a+w ~/.config/Mutate
+sed -i "s|{home}|$HOME|g" ~/.config/Mutate/config.ini
 ```
 
 #### Fedora (Thanks retspen)
