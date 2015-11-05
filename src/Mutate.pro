@@ -36,7 +36,8 @@ SOURCES += main.cpp\
     listitem.cpp \
     config.cpp \
     doublelistitem.cpp \
-    gpixbuftoqicon.cpp
+    gpixbuftoqicon.cpp \
+    theme.cpp
 
 
 HEADERS  += widget.h \
@@ -53,7 +54,8 @@ HEADERS  += widget.h \
     listitem.h \
     config.h \
     doublelistitem.h \
-    gpixbuftoqicon.h
+    gpixbuftoqicon.h \
+    theme.h
 
 
 FORMS    += widget.ui \

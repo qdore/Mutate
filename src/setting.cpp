@@ -51,6 +51,19 @@ Setting::Setting(QWidget *parent) :
         x->setText(QString::fromStdString(e.msg));
         x->exec();
     }
+
+    std::ifstream themeFile((THEMEPATH).c_str());
+    std::string themeName;
+    std::getline(themeFile, themeName);
+    if (themeName == "Classic")
+    {
+        ui->comboBox->setCurrentIndex(0);
+    }
+    else
+    {
+        ui->comboBox->setCurrentIndex(1);
+    }
+
     connect(ui->openfile, &QToolButton::pressed, this, &Setting::openScript);
     connect(ui->openfile_2, &QToolButton::pressed, this, &Setting::openIcon);
     connect(ui->hotkey_2, &QToolButton::pressed, this, &Setting::pressHotkey);
@@ -125,6 +138,13 @@ void Setting::saveItems()
         }
     }
     out.close();
+
+    std::ofstream out_theme((THEMEPATH).c_str());
+    QString theme = ui->comboBox->currentText();
+    std::string themeStr = theme.toStdString();
+    out_theme << themeStr;
+    out_theme.close();
+
     QApplication::quit();
     QProcess::startDetached(QApplication::applicationFilePath());
 }

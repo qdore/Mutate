@@ -9,9 +9,9 @@
 #include <QStringList>
 
 #define rowsize 51
-#define beginheight 125
+#define beginheight 125 //125 -> 94
 #define iconsize 42
-#define listwidgety 91
+#define listwidgety 91 //91 -> 65
 #define PATH getHomPath()
 
 #define ICON ":/icons/icons/search.png"
@@ -26,6 +26,7 @@
 #define CFPATH (std::string(PATH)+"/.config/Mutate")
 #define FREQUENCEPATH (CFPATH+"/frequence")
 #define CONFPATH (CFPATH+"/config.ini")
+#define THEMEPATH (CFPATH+"/theme.ini")
 #define URLPATH (CFPATH+"/url.history")
 #define APPSEARCHPATH ("/usr/share/applications")
 //#define APPSEARCHPATH2 ("/usr/share/app-install/desktop")

@@ -13,6 +13,7 @@
 #include "returnbyscript.h"
 #include "config.h"
 #include "singleapplication.h"
+#include "theme.h"
 
 typedef std::vector<std::pair<std::string, std::pair<std::string, QIcon*>>> pair;
 typedef std::pair<std::string, std::pair<std::string, QIcon*>> qpair;
@@ -49,5 +50,7 @@ private:
     pair map;
     PlainText *plainTextEdit;
     QListWidget *listWidget;
+    Theme* theme;
+    void setUpTheme();
 };
 #endif // WIDGET_H
