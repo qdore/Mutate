@@ -28,7 +28,7 @@ sudo apt-get install mutate
 
 #### Arch Linux AUR
 ```bash
-curl -O https://aur.archlinux.org/packages/mu/mutate-git/mutate-git.tar.gz
+curl -O https://aur.archlinux.org/cgit/aur.git/snapshot/mutate-git.tar.gz
 tar xvf mutate-git.tar.gz
 cd mutate-git
 makepkg -si
